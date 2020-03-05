@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le :  jeu. 05 mars 2020 à 21:53
+-- Généré le :  jeu. 05 mars 2020 à 21:55
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.3.8
 
@@ -13,6 +13,81 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `Projet`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Cours`
+--
+
+CREATE TABLE `Cours` (
+  `Theme` varchar(64) NOT NULL,
+  `Heures` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `Cours`
+--
+
+INSERT INTO `Cours` (`Theme`, `Heures`) VALUES
+('Francais', 6);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `CoursEtudiant`
+--
+
+CREATE TABLE `CoursEtudiant` (
+  `Cours` varchar(64) NOT NULL,
+  `Etudiant` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `CoursEtudiant`
+--
+
+INSERT INTO `CoursEtudiant` (`Cours`, `Etudiant`) VALUES
+('Francais', 13);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Ecole`
+--
+
+CREATE TABLE `Ecole` (
+  `nom` varchar(64) NOT NULL,
+  `mail` varchar(64) NOT NULL,
+  `adresse` varchar(64) NOT NULL,
+  `numero` varchar(11) NOT NULL,
+  `directeur` varchar(64) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Enseignant`
+--
+
+CREATE TABLE `Enseignant` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(64) NOT NULL,
+  `prenom` varchar(64) NOT NULL,
+  `mail` varchar(64) NOT NULL,
+  `adresse` varchar(64) NOT NULL,
+  `numero` varchar(64) NOT NULL,
+  `matiere` varchar(64) NOT NULL,
+  `mdp` varchar(120) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `Enseignant`
+--
+
+INSERT INTO `Enseignant` (`id`, `nom`, `prenom`, `mail`, `adresse`, `numero`, `matiere`, `mdp`) VALUES
+(555, 'Responsable', 'des Etudes', 'resp@ensup.fr', 'Ensup Guyancourt', '101010101', '23 janvier', 'resp'),
+(666, 'Monsieur', 'Le Directeur', 'direct@ensup.fr', 'Ensup Guyancourt', '123456789', '22 janvier', 'admin');
 
 -- --------------------------------------------------------
 
@@ -48,7 +123,43 @@ INSERT INTO `Etudiant` (`id`, `nom`, `prenom`, `mail`, `adresse`, `numero`, `dat
 --
 
 --
+-- Index pour la table `Cours`
+--
+ALTER TABLE `Cours`
+  ADD PRIMARY KEY (`Theme`);
+
+--
+-- Index pour la table `CoursEtudiant`
+--
+ALTER TABLE `CoursEtudiant`
+  ADD KEY `Cours` (`Cours`),
+  ADD KEY `Id` (`Etudiant`);
+
+--
+-- Index pour la table `Ecole`
+--
+ALTER TABLE `Ecole`
+  ADD PRIMARY KEY (`nom`);
+
+--
+-- Index pour la table `Enseignant`
+--
+ALTER TABLE `Enseignant`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `Etudiant`
 --
 ALTER TABLE `Etudiant`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `CoursEtudiant`
+--
+ALTER TABLE `CoursEtudiant`
+  ADD CONSTRAINT `Cours` FOREIGN KEY (`Cours`) REFERENCES `Cours` (`Theme`),
+  ADD CONSTRAINT `Id` FOREIGN KEY (`Etudiant`) REFERENCES `Etudiant` (`id`);
