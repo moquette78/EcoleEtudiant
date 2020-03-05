@@ -116,6 +116,7 @@ public class Lanceur {
 			
 			case "Q":
 				System.out.println("A bientot");
+				System.exit(0);
 				break;
 			default:
 			    System.out.println("");
