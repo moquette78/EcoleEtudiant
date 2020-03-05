@@ -25,7 +25,7 @@ public class Lanceur {
 		boolean connexion = false;
 		
 		Scanner sc = new Scanner(System.in);
-		char requete='!';
+		String requete="-1";
 		/**
 		 * 
 		 * phase de connexion , si vous n'etes ni responsable ni directeur vous ne passez pas
@@ -47,7 +47,9 @@ public class Lanceur {
 		 * 
 		 * tant que la personne ne quitte pas on reste dans le menu
 		 */
-		while(requete !='Q' && connexion==true) {
+		while(requete.toUpperCase()!="Q" && connexion==true) {
+			System.out.println(requete);
+			System.out.println(requete.toString()=="Q");
 			System.out.println("MENU PRINCIPAL - Cliquez sur la touche associée pour effectuer une action");
 			System.out.println("-------------------------------------------------\n");
 			System.out.println("A. Créer un étudiant");
@@ -58,9 +60,9 @@ public class Lanceur {
 			System.out.println("F. Lister l'ensemble des etudiants");
 			System.out.println("Q. Quitter le menu");
 		
-			requete = sc.next().charAt(0);
-			sc.nextLine();
-			if(requete=='A') {
+			requete = sc.nextLine();
+			switch(requete.toUpperCase()) {
+			case "A":
 				System.out.println("Id de l'etudiant ?");
 				id = sc.nextInt();
 				sc.nextLine();
@@ -77,40 +79,46 @@ public class Lanceur {
 				System.out.println("Date de naissance de l'etudiant ?");
 				dateNaissance = sc.nextLine();
 				Gestion.creerEtudiant(id, nom, prenom, mail, adresse, numero,dateNaissance);
-			}
-			if(requete=='B') {
+				break;
+			
+			case "B":
 				System.out.println("Id de l'etudiant ?");
 				id = sc.nextInt();
 				sc.nextLine();
 				System.out.println("Cours de l'etudiant ?");
 				cours = sc.nextLine();
 				Gestion.associerCoursEtudiant(id,cours);
-			}
+				break;
 			
-			if(requete=='C') {
+			case "C":
 				System.out.println("Id de l'etudiant ?");
 				id = sc.nextInt();
 				sc.nextLine();
 				Gestion.lireEtudiant(id);
-			}
+				break;
 			
-			if(requete=='D') {
+			case "D":
 				System.out.println("Id de l'etudiant ?");
 				id = sc.nextInt();
 				sc.nextLine();
 				System.out.println("Adresse de l'etudiant ?");
 				adresse = sc.nextLine();
 				Gestion.modifierAdresseEtudiant(id,adresse);
-			}
-			if(requete=='F') {
+				break;
+				
+			case "F":
 				if(idConnexion==directeur) {
 					Gestion.listerEtudiants();
 				}else {
 					System.out.println("Vous n'avez pas les droits");
 				}
-			}
-			if(requete=='Q') {
+				break;
+			
+			case "Q":
 				System.out.println("A bientot");
+				break;
+			default:
+			    System.out.println("");
 			}
 		}
 		
