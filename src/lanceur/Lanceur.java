@@ -48,8 +48,6 @@ public class Lanceur {
 		 * tant que la personne ne quitte pas on reste dans le menu
 		 */
 		while(requete.toUpperCase()!="Q" && connexion==true) {
-			System.out.println(requete);
-			System.out.println(requete.toString()=="Q");
 			System.out.println("MENU PRINCIPAL - Cliquez sur la touche associée pour effectuer une action");
 			System.out.println("-------------------------------------------------\n");
 			System.out.println("A. Créer un étudiant");
