@@ -11,6 +11,17 @@ import metier.Etudiant;
 
 public class Gestion {
 	
+	
+	
+	
+	// Information d'acc�s � la base de donn�es
+			static String url = "jdbc:mysql://localhost:8889/Projet";
+			static String login = "root";
+			static String password = "root";
+			
+			static Connection connection = null;
+			static Statement statement = null;
+	
 	/***
 	 * 
 	 * @param idEtudiant identifiant de l'etudiant
@@ -26,14 +37,6 @@ public class Gestion {
 			String adresseEtudiant, String telephoneEtudiant, String dateNaissanceEtudiant)
 	{
 		
-		
-		// Information d'acc�s � la base de donn�es
-		String url = "jdbc:mysql://localhost:8889/Projet";
-		String login = "root";
-		String password = "root";
-		
-		Connection connection = null;
-		Statement statement = null;
 		
 		try
 		{
