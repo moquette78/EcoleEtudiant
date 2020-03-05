@@ -61,7 +61,7 @@ public class Enseignant {
 	public String getMatiere() {
 		return matiere;
 	}
-	public void setMatière(String matiere) {
+	public void setMatiere(String matiere) {
 		this.matiere = matiere;
 	}
 	@Override
