@@ -16,7 +16,7 @@ Groupe de :
 - Avoir **Git** et **Eclipse** installés en local
 - Avoir **XAMPP** installé et les services **Apache** et **MySQL** lancés (ou équivalent)
 - La base de données doit être en **local**
-- On suppose que le port de la base de données est '**3306**', le nom d'utilisateur est '**root**' et le mot de passe est ''.
+- On suppose que le port de la base de données est '**8889**', le nom d'utilisateur est '**root**' et le mot de passe est 'root'.
 
 **Procédure :**
 
