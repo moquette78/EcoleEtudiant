@@ -2,13 +2,17 @@ package interfaces;
 
 import metier.Etudiant;
 
-public interface Igestion {
+/**
+ * Crée les points d'entrée des fonctionnalités.
+ *
+ */
+public interface IGestion {
 
 	abstract Etudiant creerEtudiant (Etudiant email);
 	
 	abstract void lireEtudiant(String email);
 	
-	abstract String connexion(String email, String mdp);
+	abstract String connecter(String email, String mdp);
 	
 	abstract void supprimerEtudiant(String email);
 	

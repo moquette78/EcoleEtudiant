@@ -1,4 +1,4 @@
 /**
- * Packages des interface pour la definition(signature des methodes)
+ * Package réunissant les interfaces.
  */
 package interfaces;

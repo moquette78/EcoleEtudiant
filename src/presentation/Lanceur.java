@@ -1,15 +1,22 @@
-package lanceur;
+package presentation;
 
 import java.util.Scanner;
 
-import dao.GestionDao;
 import metier.Etudiant;
 import service.*;
 
+/**
+ * Classe Lanceur : représente le point d'entrée du programme.
+ *
+ */
 public class Lanceur {
 
+	/**
+	 * Méthode principale et point d'entrée du programme.
+	 * @param args Arguments passés au programme.
+	 */
 	public static void main(String[] args) {
-		int idConnexion;
+		
 		String nom="";
 		String prenom="";
 		String mail="";
@@ -25,19 +32,15 @@ public class Lanceur {
 		
 		Scanner sc = new Scanner(System.in);
 		String requete="-1";
-		/**
-		 * 
-		 * phase de connexion , si vous n'etes ni responsable ni directeur vous ne passez pas
-		 *
-		 */
-		
+
+		// Phase de connexion, nécessite d'être responsable ou directeur
 		System.out.println("Tapez votre email pour vous connecter");
 		mail=sc.nextLine();
 		
 		System.out.println("Tapez votre mot de passe pour vous connecter");
 		mdp=sc.nextLine();
 		
-		String role = gestion.connexion(mail, mdp);
+		String role = gestion.connecter(mail, mdp);
 		
 		if(role.equals("directeur")) {
 			System.out.println("Bienvenue monsieur le directeur");
@@ -50,10 +53,8 @@ public class Lanceur {
 		}else {
 			System.out.println("");
 		}
-		/**
-		 * 
-		 * tant que la personne ne quitte pas on reste dans le menu
-		 */
+		
+		// Tant que la personne ne quitte pas on continue
 		while(requete.toUpperCase()!="Q" && connexion==true) {
 			System.out.println("MENU PRINCIPAL - Cliquez sur la touche associée pour effectuer une action");
 			System.out.println("-------------------------------------------------\n");
@@ -137,16 +138,6 @@ public class Lanceur {
 			    System.out.println("");
 			}
 		}
-		
-		// TODO Auto-generated method stub
-/*
-		System.out.println("ok");
-		//Gestion.creerEtudiant(10, "Eric", "Simon", "jjjj", "kkkkk", 12,"12 janvier");
-		Gestion.lireEtudiant(1);
-		Gestion.supprimerEtudiant(3);
-		Gestion.listerEtudiants();
-		Gestion.modifierAdresseEtudiant(4,"1 rue charles de gaulle");
-*/
 		sc.close();
 	}
 

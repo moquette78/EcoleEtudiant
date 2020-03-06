@@ -1,10 +1,13 @@
 package metier;
 
-import java.util.Date;
-
+/**
+ * Classe Etudiant : représente un étudiant dans la base de données.
+ * Spécification de la classe Personne.
+ *
+ */
 public class Etudiant extends Personne {
 
-
+	// Propriétés
 	private int id;
 	private String nom;
 	private String prenom;
@@ -13,8 +16,21 @@ public class Etudiant extends Personne {
 	private String telephone;
 	private String dateNaissanceEtudiant;
 
+	/**
+	 * Constructeur par défaut de la classe Etudiant.
+	 */
 	public Etudiant() {}
 	
+	/**
+	 * Constructeur avec arguments de la classe Etudiant.
+	 * @param id Id de l'étudiant.
+	 * @param nom Nom de l'étudiant.
+	 * @param prenom Prénom de l'étudiant.
+	 * @param mail Mail de l'étudiant.
+	 * @param adresse Adresse de l'étudiant.
+	 * @param telephone Numéro de téléphone de l'étudiant.
+	 * @param dateNaissanceEtudiant Date de naissance de l'étudiant.
+	 */
 	public Etudiant(int id, String nom, String prenom, String mail,
 			String adresse, String telephone, String dateNaissanceEtudiant) {
 		super();
@@ -30,6 +46,7 @@ public class Etudiant extends Personne {
 	public int getIdEtudiant() {
 		return id;
 	}
+	
 	public void setIdEtudiant(int idEtudiant) {
 		this.id = idEtudiant;
 	}
@@ -73,7 +90,6 @@ public class Etudiant extends Personne {
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
-
 	
 	public String getDateNaissanceEtudiant() {
 		return dateNaissanceEtudiant;
@@ -88,7 +104,5 @@ public class Etudiant extends Personne {
 		return "Etudiant [idEtudiant=" + id + ", nom=" + nom + ", prenom=" + prenom + ", mail=" + mail
 				+ ", adresse=" + adresse + ", telephone=" + telephone + ", dateNaissanceEtudiant="
 				+ dateNaissanceEtudiant + "]";
-	}	
-	
-	
+	}
 }

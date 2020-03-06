@@ -1,5 +1,9 @@
 package metier;
 
+/**
+ * Classe Ecole : représente une école dans la base de données.
+ *
+ */
 public class Ecole {
 	
 	private String nomEcole;
@@ -8,6 +12,14 @@ public class Ecole {
 	private String telephoneEcole;
 	private String directeurEcole;
 	
+	/**
+	 * Constructeur de la classe Ecole.
+	 * @param nomEcole Nom de l'école.
+	 * @param mailEcole Mail de l'école.
+	 * @param adresseEcole Adresse de l'école.
+	 * @param telephoneEcole Numéro de téléphone de l'école.
+	 * @param directeurEcole Directeur de l'école.
+	 */
 	public Ecole(String nomEcole, String mailEcole, String adresseEcole, String telephoneEcole, String directeurEcole) {
 		super();
 		this.nomEcole = nomEcole;
@@ -17,6 +29,7 @@ public class Ecole {
 		this.directeurEcole = directeurEcole;
 	}
 
+	// Getters et Setters
 	public String getNomEcole() {
 		return nomEcole;
 	}
@@ -62,7 +75,4 @@ public class Ecole {
 		return "Ecole [nomEcole=" + nomEcole + ", mailEcole=" + mailEcole + ", adresseEcole=" + adresseEcole
 				+ ", telephoneEcole=" + telephoneEcole + ", directeurEcole=" + directeurEcole + "]";
 	}
-	
-	
-	
 }
