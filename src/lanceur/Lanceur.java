@@ -69,7 +69,6 @@ public class Lanceur {
 			switch(requete.toUpperCase()) {
 			case "A":
 				
-				sc.nextLine();
 				System.out.println("Nom de l'etudiant ?");
 				nom = sc.nextLine();
 				System.out.println("Prenom de l'etudiant ?");
@@ -124,7 +123,7 @@ public class Lanceur {
 				break;
 				
 			case "F":
-				if(role=="directeur") {
+				if(role.equals("directeur")) {
 					gestion.listerEtudiants();
 				}else {
 					System.out.println("Vous n'avez pas les droits");
