@@ -23,3 +23,7 @@ Groupe de :
 1. Cloner le projet Github avec Eclipse.
 2. Dans phpmyadmin, créer une base de données "**base**" et importer la base de données grâce au fichier **base.sql**
 3. Compiler et exécuter le projet depuis Eclipse.
+
+Si les étapes ci-dessus n'ont pas fonctionné, vous pouvez essayer de télécharger le livrable (.jar) [ici](https://github.com/moquette78/EcoleEtudiant/raw/master/livraisons/GestionEcole.jar).
+
+Une fois le jar téléchargé, il faut exécuter la commande "java -jar Partiel.jar".
