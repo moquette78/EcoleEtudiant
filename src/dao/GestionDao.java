@@ -6,11 +6,9 @@ import gestion.Gestion;
 
 public class GestionDao implements Igestion{
 	
-			public Etudiant creerEtudiant (int idEtudiant, String nomEtudiant, String prenomEtudiant, String mailEtudiant,
-			String adresseEtudiant, String telephoneEtudiant, String dateNaissanceEtudiant) {
+			public Etudiant creerEtudiant (Etudiant etudiant) {
 				
-				return Gestion.creerEtudiant(idEtudiant, nomEtudiant, prenomEtudiant, mailEtudiant, adresseEtudiant, telephoneEtudiant, dateNaissanceEtudiant);
-				
+				return Gestion.creerEtudiant(etudiant);
 			}
 			
 			public void lireEtudiant(String email) {

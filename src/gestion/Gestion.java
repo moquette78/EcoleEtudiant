@@ -98,8 +98,7 @@ public class Gestion {
 			
 			
 			
-	public static Etudiant creerEtudiant(int idEtudiant, String nomEtudiant, String prenomEtudiant, String mailEtudiant,
-			String adresseEtudiant, String telephoneEtudiant, String dateNaissanceEtudiant)
+	public static Etudiant creerEtudiant(Etudiant etudiant)
 	{
 		
 		
@@ -115,12 +114,12 @@ public class Gestion {
 			statement = connection.createStatement();
 			
 			//String sql = "INSERT INTO 'Etudiant' VALUES ("+idEtudiant+","+nomEtudiant+","+prenomEtudiant+","+mailEtudiant+","+adresseEtudiant+","+telephoneEtudiant+","+dateNaissanceEtudiant+")\"";
-			String sql ="INSERT INTO Etudiant " + "VALUES ("+idEtudiant+", '"+nomEtudiant+"','"+prenomEtudiant+"','"+mailEtudiant+"','"+adresseEtudiant+"',"+telephoneEtudiant+",'"+dateNaissanceEtudiant+"')";
+			String sql ="INSERT INTO Etudiant " + "VALUES ('"+etudiant.getNomEtudiant()+"','"+etudiant.getPrenomEtudiant()+"','"+etudiant.getMailEtudiant()+"','"+etudiant.getAdresseEtudiant()+"',"+etudiant.getTelephoneEtudiant()+",'"+etudiant.getDateNaissanceEtudiant()+"')";
 			
 			// Etape 4 : Ex�cution requ�te
 			statement.executeUpdate(sql);
 			
-			System.out.println("L'etudiant " + nomEtudiant + " " + prenomEtudiant + " a �t� cr��.\n");
+			System.out.println("L'etudiant " + etudiant.getNomEtudiant() + " " + etudiant.getPrenomEtudiant() + " a �t� cr��.\n");
 		}
 		catch (SQLException e)
 		{
@@ -143,7 +142,7 @@ public class Gestion {
 				e.printStackTrace();
 			}
 		}
-		return new Etudiant(idEtudiant, nomEtudiant, prenomEtudiant, mailEtudiant,adresseEtudiant,telephoneEtudiant,dateNaissanceEtudiant);
+		return new Etudiant();
 	}
 	
 	/***

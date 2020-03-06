@@ -2,7 +2,9 @@ package lanceur;
 
 import java.util.Scanner;
 
+import dao.GestionDao;
 import gestion.*;
+import metier.Etudiant;
 
 public class Lanceur {
 
@@ -17,7 +19,7 @@ public class Lanceur {
 		String dateNaissance="";
 		String cours="";
 		String mdp="";
-		
+		GestionDao gestiondao =  new GestionDao();
 		
 		boolean connexion = false;
 		
@@ -66,8 +68,7 @@ public class Lanceur {
 			requete = sc.nextLine();
 			switch(requete.toUpperCase()) {
 			case "A":
-				System.out.println("Id de l'etudiant ?");
-				id = sc.nextInt();
+				
 				sc.nextLine();
 				System.out.println("Nom de l'etudiant ?");
 				nom = sc.nextLine();
@@ -81,22 +82,29 @@ public class Lanceur {
 				numero = sc.nextLine();
 				System.out.println("Date de naissance de l'etudiant ?");
 				dateNaissance = sc.nextLine();
-				Gestion.creerEtudiant(id, nom, prenom, mail, adresse, numero,dateNaissance);
+				Etudiant etudiant=new Etudiant();
+				etudiant.setNomEtudiant(nom);
+				etudiant.setPrenomEtudiant(prenom);
+				etudiant.setAdresseEtudiant(adresse);
+				etudiant.setMailEtudiant(mail);
+				etudiant.setDateNaissanceEtudiant(dateNaissance);
+				etudiant.setTelephoneEtudiant(numero);
+				gestiondao.creerEtudiant(etudiant);
 				break;
 			
 			case "B":
-				System.out.println("Id de l'etudiant ?");
+				System.out.println("Entrer l'email de l'etudiant ?");
 				id = sc.nextInt();
 				sc.nextLine();
 				System.out.println("Cours de l'etudiant ?");
 				cours = sc.nextLine();
-				Gestion.associerCoursEtudiant(id,cours);
+				gestiondao.associerCoursEtudiant(id,cours);
 				break;
 			
 			case "C":
 				System.out.println("Entrer l'email  de l'etudiant ?");
 				mail = sc.nextLine();
-				Gestion.lireEtudiant(mail);
+				gestiondao.lireEtudiant(mail);
 				break;
 			
 			case "D":
@@ -104,18 +112,18 @@ public class Lanceur {
 				mail = sc.nextLine();
 				System.out.println("Adresse de l'etudiant ?");
 				adresse = sc.nextLine();
-				Gestion.modifierAdresseEtudiant(mail,adresse);
+				gestiondao.modifierAdresseEtudiant(mail,adresse);
 				break;
 				
 			case "E":
 				System.out.println("Entrer l'email de l'etudiant ?");
 				mail = sc.nextLine();
-				Gestion.supprimerEtudiant(mail);
+				gestiondao.supprimerEtudiant(mail);
 				break;
 				
 			case "F":
 				if(role=="directeur") {
-					Gestion.listerEtudiants();
+					gestiondao.listerEtudiants();
 				}else {
 					System.out.println("Vous n'avez pas les droits");
 				}

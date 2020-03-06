@@ -4,10 +4,9 @@ import metier.Etudiant;
 
 public interface Igestion {
 
-	abstract Etudiant creerEtudiant (int idEtudiant, String nomEtudiant, String prenomEtudiant, String mailEtudiant,
-	String adresseEtudiant, String telephoneEtudiant, String dateNaissanceEtudiant);
+	abstract Etudiant creerEtudiant (Etudiant email);
 	
-	abstract void lireEtudiant(String emai);
+	abstract void lireEtudiant(String email);
 	
 	abstract void supprimerEtudiant(String email);
 	

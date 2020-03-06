@@ -27,6 +27,8 @@ public class Etudiant {
 		this.dateNaissanceEtudiant = dateNaissanceEtudiant;
 	}
 	
+	public Etudiant() {}
+	
 	public int getIdEtudiant() {
 		return idEtudiant;
 	}
