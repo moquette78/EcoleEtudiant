@@ -21,10 +21,70 @@ public class Gestion {
 			
 			static Connection connection = null;
 			static Statement statement = null;
+			static ResultSet rs=null;
 			
 			
 			
-	
+			/***
+			 * Connexion 		
+			 */
+					
+			public static String connexion(String email , String mdp) {
+				
+				String role ="";
+				
+				try
+				{
+					
+					
+					// Etape 1 : Chargement du driver
+					Class.forName("com.mysql.cj.jdbc.Driver");
+					
+					// Etape 2 : R�cup�ration de la connexion
+					connection = DriverManager.getConnection(url, login, password);
+					
+					// Etape 3 : Cr�ation d'un statement
+					statement = connection.createStatement();
+					
+					String sql ="Select from Etudiant  WHERE mail ='"+email+"' and mdp ='"+mdp+"' ";
+					
+					// Etape 4 : Ex�cution requ�te
+					rs = statement.executeQuery(sql);
+					if(rs.wasNull()) {
+						System.out.println("Identifiant ou mot de passe incorrect");
+						
+					}
+					else {
+						role = rs.getString("role");
+					}
+					
+				}
+				catch (SQLException e)
+				{
+					e.printStackTrace();
+				}
+				catch (ClassNotFoundException e)
+				{
+					e.printStackTrace();
+				}
+				finally
+				{
+					try
+					{
+						// Etape 5 : Lib�rer ressources de la m�moire
+						connection.close();
+						statement.close();
+					}
+					catch (SQLException e)
+					{
+						e.printStackTrace();
+					}
+				}
+				
+			return role;
+			}
+			
+			
 	
 	/***
 	 * 

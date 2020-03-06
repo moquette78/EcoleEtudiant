@@ -18,10 +18,9 @@ public class Lanceur {
 		String numero;
 		String dateNaissance="";
 		String cours="";
+		String mdp="";
 		
 		
-		int directeur = 666;
-		int responsable = 555;
 		boolean connexion = false;
 		
 		Scanner sc = new Scanner(System.in);
@@ -32,12 +31,20 @@ public class Lanceur {
 		 *
 		 */
 		
-		System.out.println("Tapez votre id pour vous connecter");
-		idConnexion=sc.nextInt();
-		if(idConnexion==directeur) {
+		System.out.println("Tapez votre email pour vous connecter");
+		mail=sc.nextLine();
+		
+		System.out.println("Tapez votre mot de passe pour vous connecter");
+		mdp=sc.nextLine();
+		
+		String role = Gestion.connexion(mail, mdp);
+		
+		if(role=="directeur") {
 			System.out.println("Bienvenue monsieur le directeur");
 			connexion = true;
-		}else if(idConnexion==responsable) {
+		}
+		
+		else if(role=="responsable") {
 			System.out.println("Bienvenue monsieur le responsable");
 			connexion = true;
 		}else {
@@ -105,7 +112,7 @@ public class Lanceur {
 				break;
 				
 			case "F":
-				if(idConnexion==directeur) {
+				if(role=="directeur") {
 					Gestion.listerEtudiants();
 				}else {
 					System.out.println("Vous n'avez pas les droits");
