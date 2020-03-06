@@ -48,7 +48,7 @@ public class Lanceur {
 			System.out.println("Bienvenue monsieur le responsable");
 			connexion = true;
 		}else {
-			System.out.println("Vous n'avez pas les droits");
+			System.out.println("");
 		}
 		/**
 		 * 
