@@ -152,7 +152,7 @@ public class Gestion {
 	 * 
 	 * retourne les informations concernant l'etudiant
 	 */
-	public static void lireEtudiant(int idEtudiant)
+	public static void lireEtudiant(String email)
 	{
 		
 		
@@ -177,7 +177,7 @@ public class Gestion {
 			statement = connection.createStatement();
 			
 			//String sql = "INSERT INTO 'Etudiant' VALUES ("+idEtudiant+","+nomEtudiant+","+prenomEtudiant+","+mailEtudiant+","+adresseEtudiant+","+telephoneEtudiant+","+dateNaissanceEtudiant+")\"";
-			String sql ="Select * FROM Etudiant WHERE id ='"+idEtudiant+"'";
+			String sql ="Select * FROM Etudiant WHERE mail ='"+email+"'";
 			
 			// Etape 4 : Ex�cution requ�te
 			rs=statement.executeQuery(sql);
@@ -220,7 +220,7 @@ public class Gestion {
 	 * 
 	 * supprime un etudiant de la base
 	 */
-	public static void supprimerEtudiant(int idEtudiant)
+	public static void supprimerEtudiant(String email)
 	{
 		
 		
@@ -244,7 +244,7 @@ public class Gestion {
 			// Etape 3 : Cr�ation d'un statement
 			statement = connection.createStatement();
 			
-			String sql = "delete from Etudiant where id ='"+idEtudiant+"'";
+			String sql = "delete from Etudiant where mail ='"+email+"'";
 			
 			// Etape 4 : Ex�cution requ�te
 			resultat= statement.executeUpdate(sql);
@@ -348,7 +348,7 @@ public class Gestion {
 	 * 
 	 * met a jour l'adresse de l'etudiant
 	 */
-	public static void modifierAdresseEtudiant(int idEtudiant,String nouvelleAdresse)
+	public static void modifierAdresseEtudiant(String email,String nouvelleAdresse)
 	{
 		
 		
@@ -372,7 +372,7 @@ public class Gestion {
 			// Etape 3 : Cr�ation d'un statement
 			statement = connection.createStatement();
 			
-			String sql = "Update Etudiant Set adresse= '"+nouvelleAdresse+"'where id ='"+idEtudiant+"'";
+			String sql = "Update Etudiant Set adresse= '"+nouvelleAdresse+"'where mail ='"+email+"'";
 			
 			// Etape 4 : Ex�cution requ�te
 			resultat= statement.executeUpdate(sql);

@@ -96,18 +96,18 @@ public class Lanceur {
 			
 			case "C":
 				System.out.println("Id de l'etudiant ?");
-				id = sc.nextInt();
+				mail = sc.nextLine();
 				sc.nextLine();
-				Gestion.lireEtudiant(id);
+				Gestion.lireEtudiant(mail);
 				break;
 			
 			case "D":
 				System.out.println("Id de l'etudiant ?");
-				id = sc.nextInt();
+				mail = sc.nextLine();
 				sc.nextLine();
 				System.out.println("Adresse de l'etudiant ?");
 				adresse = sc.nextLine();
-				Gestion.modifierAdresseEtudiant(id,adresse);
+				Gestion.modifierAdresseEtudiant(mail,adresse);
 				break;
 				
 			case "F":

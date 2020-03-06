@@ -13,16 +13,16 @@ public class GestionDao implements Igestion{
 				
 			}
 			
-			public void lireEtudiant(int idEtudiant) {
-				Gestion.lireEtudiant(idEtudiant);
+			public void lireEtudiant(String email) {
+				Gestion.lireEtudiant(email);
 			}
 			
-			public void supprimerEtudiant(int idEtudiant) {
-				Gestion.supprimerEtudiant(idEtudiant);
+			public void supprimerEtudiant(String email) {
+				Gestion.supprimerEtudiant(email);
 			}
 			
-			public void modifierAdresseEtudiant(int idEtudiant,String nouvelleAdresse) {
-				Gestion.modifierAdresseEtudiant(idEtudiant, nouvelleAdresse);
+			public void modifierAdresseEtudiant(String email,String nouvelleAdresse) {
+				Gestion.modifierAdresseEtudiant(email, nouvelleAdresse);
 			}
 			
 			public void associerCoursEtudiant(int idEtudiant,String theme) {
