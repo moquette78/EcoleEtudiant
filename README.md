@@ -21,5 +21,5 @@ Groupe de :
 **Procédure :**
 
 1. Cloner le projet Github avec Eclipse.
-2. Dans phpmyadmin, importer la base de données grâce au fichier [**base.sql**](https://github.com/moquette78/EcoleEtudiant/raw/master/base.sql)
+2. Dans phpmyadmin, importer la base de données grâce au fichier [**base.sql**](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/moquette78/EcoleEtudiant/blob/master/base.sql)
 3. Compiler et exécuter le projet depuis Eclipse.
