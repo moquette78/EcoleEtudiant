@@ -12,12 +12,11 @@ import metier.Etudiant;
 
 
 public class Gestion implements Igestion {
-	
 
-	@Override
-	public String  connexion(String email, String mdp) {
-		return GestionDao.connexion(email, mdp);
-	}
+	
+			
+	
+	
 	
 	public Etudiant creerEtudiant (Etudiant etudiant) {
 		
@@ -42,6 +41,11 @@ public class Gestion implements Igestion {
 	
 	public void listerEtudiants() {
 		GestionDao.listerEtudiants();
+	}
+
+	@Override
+	public String connexion(String email, String mdp) {
+		return GestionDao.connexion(email, mdp);
 	}
 
 }

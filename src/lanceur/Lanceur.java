@@ -89,7 +89,9 @@ public class Lanceur {
 				etudiant.setMail(mail);
 				etudiant.setDateNaissanceEtudiant(dateNaissance);
 				etudiant.setTelephone(numero);
+
 				gestion.creerEtudiant(etudiant);
+
 				break;
 			
 			case "B":

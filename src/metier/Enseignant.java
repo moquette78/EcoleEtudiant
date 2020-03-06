@@ -1,62 +1,25 @@
 package metier;
 
-public class Enseignant {
+public class Enseignant extends Personne{
 	
-	private int idEnseignant;
-	private String nomEnseignant;
-	private String prenomEnseignant;
-	private String mailEnseignant;
-	private String adresseEnseignant;
-	private String telephoneEnseignant;
+	private int id;
+	private String nom;
+	private String prenom;
+	private String mail;
+	private String adresse;
+	private String telephone;
 	private String matiere;
 	
 	
-	public Enseignant(int idEnseignant, String nomEnseignant, String prenomEnseignant, String mailEnseignant,
-			String adresseEnseignant, String telephoneEnseignant, String matiere) {
-		super();
-		this.idEnseignant = idEnseignant;
-		this.nomEnseignant = nomEnseignant;
-		this.prenomEnseignant = prenomEnseignant;
-		this.mailEnseignant = mailEnseignant;
-		this.adresseEnseignant = adresseEnseignant;
-		this.telephoneEnseignant = telephoneEnseignant;
+	public Enseignant(int id, String nom, String prenom, String mail,
+			String adresse, String telephone, String matiere) {
+		this.id = id;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.mail = mail;
+		this.adresse = adresse;
+		this.telephone = telephone;
 		this.matiere = matiere;
-	}
-	public int getIdEnseignant() {
-		return idEnseignant;
-	}
-	public void setIdEnseignant(int idEnseignant) {
-		this.idEnseignant = idEnseignant;
-	}
-	public String getNomEnseignant() {
-		return nomEnseignant;
-	}
-	public void setNomEnseignant(String nomEnseignant) {
-		this.nomEnseignant = nomEnseignant;
-	}
-	public String getPrenomEnseignant() {
-		return prenomEnseignant;
-	}
-	public void setPrenomEnseignant(String prenomEnseignant) {
-		this.prenomEnseignant = prenomEnseignant;
-	}
-	public String getMailEnseignant() {
-		return mailEnseignant;
-	}
-	public void setMailEnseignant(String mailEnseignant) {
-		this.mailEnseignant = mailEnseignant;
-	}
-	public String getAdresseEnseignant() {
-		return adresseEnseignant;
-	}
-	public void setAdresseEnseignant(String adresseEnseignant) {
-		this.adresseEnseignant = adresseEnseignant;
-	}
-	public String getTelephoneEnseignant() {
-		return telephoneEnseignant;
-	}
-	public void setTelephoneEnseignant(String telephoneEnseignant) {
-		this.telephoneEnseignant = telephoneEnseignant;
 	}
 	public String getMatiere() {
 		return matiere;
@@ -66,9 +29,9 @@ public class Enseignant {
 	}
 	@Override
 	public String toString() {
-		return "Enseignant [idEnseignant=" + idEnseignant + ", nomEnseignant=" + nomEnseignant + ", prenomEnseignant="
-				+ prenomEnseignant + ", mailEnseignant=" + mailEnseignant + ", adresseEnseignant=" + adresseEnseignant
-				+ ", telephoneEnseignant=" + telephoneEnseignant + ", matiere=" + matiere + "]";
+		return "Enseignant [id=" + id + ", nom=" + nom + ", prenom="
+				+ prenom + ", mail=" + mail + ", adresse=" + adresse
+				+ ", telephone=" + telephone + ", matiere=" + matiere + "]";
 	}
 	
 	
