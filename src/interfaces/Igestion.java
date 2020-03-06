@@ -8,6 +8,8 @@ public interface Igestion {
 	
 	abstract void lireEtudiant(String email);
 	
+	abstract String connexion(String email, String mdp);
+	
 	abstract void supprimerEtudiant(String email);
 	
 	abstract void modifierAdresseEtudiant(String email,String nouvelleAdresse);

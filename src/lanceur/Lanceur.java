@@ -3,8 +3,9 @@ package lanceur;
 import java.util.Scanner;
 
 import dao.GestionDao;
-import gestion.*;
+import gestion.Gestion;
 import metier.Etudiant;
+import service.*;
 
 public class Lanceur {
 
@@ -37,7 +38,7 @@ public class Lanceur {
 		System.out.println("Tapez votre mot de passe pour vous connecter");
 		mdp=sc.nextLine();
 		
-		String role = Gestion.connexion(mail, mdp);
+		String role = gestiondao.connexion(mail, mdp);
 		
 		if(role.equals("directeur")) {
 			System.out.println("Bienvenue monsieur le directeur");

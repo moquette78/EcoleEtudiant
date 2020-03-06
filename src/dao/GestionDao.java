@@ -2,7 +2,7 @@ package dao;
 
 import interfaces.Igestion;
 import metier.Etudiant;
-import gestion.Gestion;
+import service.Gestion;
 
 public class GestionDao implements Igestion{
 	
@@ -29,6 +29,11 @@ public class GestionDao implements Igestion{
 			
 			public void listerEtudiants() {
 				Gestion.listerEtudiants();
+			}
+
+			@Override
+			public String  connexion(String email, String mdp) {
+				return Gestion.connexion(email, mdp);
 			}
 
 }
