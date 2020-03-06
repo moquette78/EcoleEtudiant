@@ -2,69 +2,32 @@ package metier;
 
 import java.util.Date;
 
-public class Etudiant {
+public class Etudiant extends Personne {
 
-	private int idEtudiant;
-	private String nomEtudiant;
-	private String prenomEtudiant;
-	private String mailEtudiant;
-	private String adresseEtudiant;
-	private String telephoneEtudiant;
+	private int id;
+	private String nom;
+	private String prenom;
+	private String mail;
+	private String adresse;
+	private String telephone;
 	private String dateNaissanceEtudiant;
 	
 	
 	
+	public Etudiant() {}
 	
-	public Etudiant(int idEtudiant, String nomEtudiant, String prenomEtudiant, String mailEtudiant,
-			String adresseEtudiant, String telephoneEtudiant, String dateNaissanceEtudiant) {
+	public Etudiant(int id, String nom, String prenom, String mail,
+			String adresse, String telephone, String dateNaissanceEtudiant) {
 		super();
-		this.idEtudiant = idEtudiant;
-		this.nomEtudiant = nomEtudiant;
-		this.prenomEtudiant = prenomEtudiant;
-		this.mailEtudiant = mailEtudiant;
-		this.adresseEtudiant = adresseEtudiant;
-		this.telephoneEtudiant = telephoneEtudiant;
+		this.id = id;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.mail = mail;
+		this.adresse = adresse;
+		this.telephone = telephone;
 		this.dateNaissanceEtudiant = dateNaissanceEtudiant;
 	}
 	
-	public Etudiant() {}
-	
-	public int getIdEtudiant() {
-		return idEtudiant;
-	}
-	public void setIdEtudiant(int idEtudiant) {
-		this.idEtudiant = idEtudiant;
-	}
-	public String getNomEtudiant() {
-		return nomEtudiant;
-	}
-	public void setNomEtudiant(String nomEtudiant) {
-		this.nomEtudiant = nomEtudiant;
-	}
-	public String getPrenomEtudiant() {
-		return prenomEtudiant;
-	}
-	public void setPrenomEtudiant(String prenomEtudiant) {
-		this.prenomEtudiant = prenomEtudiant;
-	}
-	public String getMailEtudiant() {
-		return mailEtudiant;
-	}
-	public void setMailEtudiant(String mailEtudiant) {
-		this.mailEtudiant = mailEtudiant;
-	}
-	public String getAdresseEtudiant() {
-		return adresseEtudiant;
-	}
-	public void setAdresseEtudiant(String adresseEtudiant) {
-		this.adresseEtudiant = adresseEtudiant;
-	}
-	public String getTelephoneEtudiant() {
-		return telephoneEtudiant;
-	}
-	public void setTelephoneEtudiant(String telephoneEtudiant) {
-		this.telephoneEtudiant = telephoneEtudiant;
-	}
 	public String getDateNaissanceEtudiant() {
 		return dateNaissanceEtudiant;
 	}
@@ -74,9 +37,9 @@ public class Etudiant {
 	
 	@Override
 	public String toString() {
-		return "Etudiant [idEtudiant=" + idEtudiant + ", nomEtudiant=" + nomEtudiant + ", prenomEtudiant="
-				+ prenomEtudiant + ", mailEtudiant=" + mailEtudiant + ", adresseEtudiant=" + adresseEtudiant
-				+ ", telephoneEtudiant=" + telephoneEtudiant + ", dateNaissanceEtudiant=" + dateNaissanceEtudiant + "]";
+		return "Etudiant [id=" + id + ", nom=" + nom + ", prenom="
+				+ prenom + ", mail=" + mail + ", adresse=" + adresse
+				+ ", telephone=" + telephone + ", dateNaissanceEtudiant=" + dateNaissanceEtudiant + "]";
 	}
 	
 	

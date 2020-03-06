@@ -84,12 +84,12 @@ public class Lanceur {
 				System.out.println("Date de naissance de l'etudiant ?");
 				dateNaissance = sc.nextLine();
 				Etudiant etudiant=new Etudiant();
-				etudiant.setNomEtudiant(nom);
-				etudiant.setPrenomEtudiant(prenom);
-				etudiant.setAdresseEtudiant(adresse);
-				etudiant.setMailEtudiant(mail);
+				etudiant.setNom(nom);
+				etudiant.setPrenom(prenom);
+				etudiant.setAdresse(adresse);
+				etudiant.setMail(mail);
 				etudiant.setDateNaissanceEtudiant(dateNaissance);
-				etudiant.setTelephoneEtudiant(numero);
+				etudiant.setTelephone(numero);
 				gestiondao.creerEtudiant(etudiant);
 				break;
 			

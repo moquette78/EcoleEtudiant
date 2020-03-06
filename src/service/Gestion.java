@@ -114,12 +114,12 @@ public class Gestion {
 			statement = connection.createStatement();
 			
 			//String sql = "INSERT INTO 'Etudiant' VALUES ("+idEtudiant+","+nomEtudiant+","+prenomEtudiant+","+mailEtudiant+","+adresseEtudiant+","+telephoneEtudiant+","+dateNaissanceEtudiant+")\"";
-			String sql ="INSERT INTO Etudiant " + "VALUES ('"+etudiant.getNomEtudiant()+"','"+etudiant.getPrenomEtudiant()+"','"+etudiant.getMailEtudiant()+"','"+etudiant.getAdresseEtudiant()+"',"+etudiant.getTelephoneEtudiant()+",'"+etudiant.getDateNaissanceEtudiant()+"')";
+			String sql ="INSERT INTO Etudiant " + "VALUES ('"+etudiant.getNom()+"','"+etudiant.getPrenom()+"','"+etudiant.getMail()+"','"+etudiant.getAdresse()+"',"+etudiant.getTelephone()+",'"+etudiant.getDateNaissanceEtudiant()+"')";
 			
 			// Etape 4 : Ex�cution requ�te
 			statement.executeUpdate(sql);
 			
-			System.out.println("L'etudiant " + etudiant.getNomEtudiant() + " " + etudiant.getPrenomEtudiant() + " a �t� cr��.\n");
+			System.out.println("L'etudiant " + etudiant.getNom() + " " + etudiant.getPrenom() + " a �t� cr��.\n");
 		}
 		catch (SQLException e)
 		{

@@ -1,6 +1,3 @@
-/gestion/
-/lanceur/
-/metier/
-/interfaces/
-/dao/
 /service/
+/metier/
+/lanceur/
