@@ -5,28 +5,29 @@ import java.util.Date;
 public class Etudiant {
 
 	private int idEtudiant;
-	private String nomEtudiant;
-	private String prenomEtudiant;
-	private String mailEtudiant;
-	private String adresseEtudiant;
-	private String telephoneEtudiant;
+	private String nom;
+	private String prenom;
+	private String mail;
+	private String adresse;
+	private String telephone;
 	private String dateNaissanceEtudiant;
 	
 	
 	
 	
-	public Etudiant(int idEtudiant, String nomEtudiant, String prenomEtudiant, String mailEtudiant,
-			String adresseEtudiant, String telephoneEtudiant, String dateNaissanceEtudiant) {
+	
+	public Etudiant(int idEtudiant, String nom, String prenom, String mail, String adresse, String telephone,
+			String dateNaissanceEtudiant) {
 		super();
 		this.idEtudiant = idEtudiant;
-		this.nomEtudiant = nomEtudiant;
-		this.prenomEtudiant = prenomEtudiant;
-		this.mailEtudiant = mailEtudiant;
-		this.adresseEtudiant = adresseEtudiant;
-		this.telephoneEtudiant = telephoneEtudiant;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.mail = mail;
+		this.adresse = adresse;
+		this.telephone = telephone;
 		this.dateNaissanceEtudiant = dateNaissanceEtudiant;
 	}
-	
+
 	public Etudiant() {}
 	
 	public int getIdEtudiant() {
@@ -35,49 +36,62 @@ public class Etudiant {
 	public void setIdEtudiant(int idEtudiant) {
 		this.idEtudiant = idEtudiant;
 	}
-	public String getNomEtudiant() {
-		return nomEtudiant;
+
+	public String getNom() {
+		return nom;
 	}
-	public void setNomEtudiant(String nomEtudiant) {
-		this.nomEtudiant = nomEtudiant;
+
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
-	public String getPrenomEtudiant() {
-		return prenomEtudiant;
+
+	public String getPrenom() {
+		return prenom;
 	}
-	public void setPrenomEtudiant(String prenomEtudiant) {
-		this.prenomEtudiant = prenomEtudiant;
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
 	}
-	public String getMailEtudiant() {
-		return mailEtudiant;
+
+	public String getMail() {
+		return mail;
 	}
-	public void setMailEtudiant(String mailEtudiant) {
-		this.mailEtudiant = mailEtudiant;
+
+	public void setMail(String mail) {
+		this.mail = mail;
 	}
-	public String getAdresseEtudiant() {
-		return adresseEtudiant;
+
+	public String getAdresse() {
+		return adresse;
 	}
-	public void setAdresseEtudiant(String adresseEtudiant) {
-		this.adresseEtudiant = adresseEtudiant;
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
 	}
-	public String getTelephoneEtudiant() {
-		return telephoneEtudiant;
+
+	public String getTelephone() {
+		return telephone;
 	}
-	public void setTelephoneEtudiant(String telephoneEtudiant) {
-		this.telephoneEtudiant = telephoneEtudiant;
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
 	}
+
 	public String getDateNaissanceEtudiant() {
 		return dateNaissanceEtudiant;
 	}
+
 	public void setDateNaissanceEtudiant(String dateNaissanceEtudiant) {
 		this.dateNaissanceEtudiant = dateNaissanceEtudiant;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Etudiant [idEtudiant=" + idEtudiant + ", nomEtudiant=" + nomEtudiant + ", prenomEtudiant="
-				+ prenomEtudiant + ", mailEtudiant=" + mailEtudiant + ", adresseEtudiant=" + adresseEtudiant
-				+ ", telephoneEtudiant=" + telephoneEtudiant + ", dateNaissanceEtudiant=" + dateNaissanceEtudiant + "]";
+		return "Etudiant [idEtudiant=" + idEtudiant + ", nom=" + nom + ", prenom=" + prenom + ", mail=" + mail
+				+ ", adresse=" + adresse + ", telephone=" + telephone + ", dateNaissanceEtudiant="
+				+ dateNaissanceEtudiant + "]";
 	}
+	
 	
 	
 }
