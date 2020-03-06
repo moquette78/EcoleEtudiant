@@ -1,7 +1,5 @@
 package lanceur;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Scanner;
 
 import gestion.*;
@@ -130,6 +128,7 @@ public class Lanceur {
 		Gestion.listerEtudiants();
 		Gestion.modifierAdresseEtudiant(4,"1 rue charles de gaulle");
 */
+		sc.close();
 	}
 
 }

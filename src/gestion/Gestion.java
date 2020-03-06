@@ -5,7 +5,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Date;
 
 import metier.Etudiant;
 
@@ -14,7 +13,7 @@ public class Gestion {
 	
 	
 	
-	// Information d'accï¿½s ï¿½ la base de donnï¿½es
+	// Information d'accès à la base de données
 			static String url = "jdbc:mysql://localhost:8889/Projet";
 			static String login = "root";
 			static String password = "root";
@@ -31,7 +30,7 @@ public class Gestion {
 	 * @param adresseEtudiant adresse de l'etudiant
 	 * @param telephoneEtudiant telephone de l'etudiant
 	 * @param dateNaissanceEtudiant date de naissance de l'etudiant
-	 * @return l'etudiant crÃ©Ã© en question
+	 * @return l'etudiant créé en question
 	 */
 	public static Etudiant creerEtudiant(int idEtudiant, String nomEtudiant, String prenomEtudiant, String mailEtudiant,
 			String adresseEtudiant, String telephoneEtudiant, String dateNaissanceEtudiant)
@@ -43,19 +42,19 @@ public class Gestion {
 			// Etape 1 : Chargement du driver
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			// Etape 2 : Rï¿½cupï¿½ration de la connexion
+			// Etape 2 : Récupération de la connexion
 			connection = DriverManager.getConnection(url, login, password);
 			
-			// Etape 3 : Crï¿½ation d'un statement
+			// Etape 3 : Création d'un statement
 			statement = connection.createStatement();
 			
 			//String sql = "INSERT INTO 'Etudiant' VALUES ("+idEtudiant+","+nomEtudiant+","+prenomEtudiant+","+mailEtudiant+","+adresseEtudiant+","+telephoneEtudiant+","+dateNaissanceEtudiant+")\"";
 			String sql ="INSERT INTO Etudiant " + "VALUES ("+idEtudiant+", '"+nomEtudiant+"','"+prenomEtudiant+"','"+mailEtudiant+"','"+adresseEtudiant+"',"+telephoneEtudiant+",'"+dateNaissanceEtudiant+"')";
 			
-			// Etape 4 : Exï¿½cution requï¿½te
+			// Etape 4 : Exécution requête
 			statement.executeUpdate(sql);
 			
-			System.out.println("L'etudiant " + nomEtudiant + " " + prenomEtudiant + " a Ã©tÃ© crÃ©e.\n");
+			System.out.println("L'etudiant " + nomEtudiant + " " + prenomEtudiant + " a été créé.\n");
 		}
 		catch (SQLException e)
 		{
@@ -69,7 +68,7 @@ public class Gestion {
 		{
 			try
 			{
-				// Etape 5 : Libï¿½rer ressources de la mï¿½moire
+				// Etape 5 : Libérer ressources de la mémoire
 				connection.close();
 				statement.close();
 			}
@@ -91,7 +90,7 @@ public class Gestion {
 	{
 		
 		
-		// Information d'accï¿½s ï¿½ la base de donnï¿½es
+		// Information d'accès à la base de données
 		String url = "jdbc:mysql://localhost:8889/Projet";
 		String login = "root";
 		String password = "root";
@@ -105,16 +104,16 @@ public class Gestion {
 			// Etape 1 : Chargement du driver
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			// Etape 2 : Rï¿½cupï¿½ration de la connexion
+			// Etape 2 : Récupération de la connexion
 			connection = DriverManager.getConnection(url, login, password);
 			
-			// Etape 3 : Crï¿½ation d'un statement
+			// Etape 3 : Création d'un statement
 			statement = connection.createStatement();
 			
 			//String sql = "INSERT INTO 'Etudiant' VALUES ("+idEtudiant+","+nomEtudiant+","+prenomEtudiant+","+mailEtudiant+","+adresseEtudiant+","+telephoneEtudiant+","+dateNaissanceEtudiant+")\"";
 			String sql ="Select * FROM Etudiant WHERE id ='"+idEtudiant+"'";
 			
-			// Etape 4 : Exï¿½cution requï¿½te
+			// Etape 4 : Exécution requête
 			rs=statement.executeQuery(sql);
 			if(rs.next()) {
 			System.out.println(rs.getString("nom"));
@@ -139,7 +138,7 @@ public class Gestion {
 		{
 			try
 			{
-				// Etape 5 : Libï¿½rer ressources de la mï¿½moire
+				// Etape 5 : Libérer ressources de la mémoire
 				connection.close();
 				statement.close();
 			}
@@ -159,7 +158,7 @@ public class Gestion {
 	{
 		
 		
-		// Information d'accï¿½s ï¿½ la base de donnï¿½es
+		// Information d'accès à la base de données
 		String url = "jdbc:mysql://localhost:8889/Projet";
 		String login = "root";
 		String password = "root";
@@ -173,15 +172,15 @@ public class Gestion {
 			// Etape 1 : Chargement du driver
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			// Etape 2 : Rï¿½cupï¿½ration de la connexion
+			// Etape 2 : Récupération de la connexion
 			connection = DriverManager.getConnection(url, login, password);
 			
-			// Etape 3 : Crï¿½ation d'un statement
+			// Etape 3 : Création d'un statement
 			statement = connection.createStatement();
 			
 			String sql = "delete from Etudiant where id ='"+idEtudiant+"'";
 			
-			// Etape 4 : Exï¿½cution requï¿½te
+			// Etape 4 : Exécution requête
 			resultat= statement.executeUpdate(sql);
 			
 			if(resultat==0) {
@@ -202,7 +201,7 @@ public class Gestion {
 		{
 			try
 			{
-				// Etape 5 : Libï¿½rer ressources de la mï¿½moire
+				// Etape 5 : Libérer ressources de la mémoire
 				connection.close();
 				statement.close();
 			}
@@ -221,7 +220,7 @@ public class Gestion {
 	{
 		
 		
-		// Information d'accï¿½s ï¿½ la base de donnï¿½es
+		// Information d'accès à la base de données
 		String url = "jdbc:mysql://localhost:8889/Projet";
 		String login = "root";
 		String password = "root";
@@ -235,16 +234,16 @@ public class Gestion {
 			// Etape 1 : Chargement du driver
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			// Etape 2 : Rï¿½cupï¿½ration de la connexion
+			// Etape 2 : Récupération de la connexion
 			connection = DriverManager.getConnection(url, login, password);
 			
-			// Etape 3 : Crï¿½ation d'un statement
+			// Etape 3 : Création d'un statement
 			statement = connection.createStatement();
 			
 			//String sql = "INSERT INTO 'Etudiant' VALUES ("+idEtudiant+","+nomEtudiant+","+prenomEtudiant+","+mailEtudiant+","+adresseEtudiant+","+telephoneEtudiant+","+dateNaissanceEtudiant+")\"";
 			String sql ="Select * FROM Etudiant order by nom";
 			
-			// Etape 4 : Exï¿½cution requï¿½te
+			// Etape 4 : Exécution requête
 			rs=statement.executeQuery(sql);
 			System.out.println("Voici l'ensemble des etudiants : \n");
 			while(rs.next()) {
@@ -264,7 +263,7 @@ public class Gestion {
 		{
 			try
 			{
-				// Etape 5 : Libï¿½rer ressources de la mï¿½moire
+				// Etape 5 : Libérer ressources de la mémoire
 				connection.close();
 				statement.close();
 			}
@@ -287,7 +286,7 @@ public class Gestion {
 	{
 		
 		
-		// Information d'accï¿½s ï¿½ la base de donnï¿½es
+		// Information d'accès à la base de données
 		String url = "jdbc:mysql://localhost:8889/Projet";
 		String login = "root";
 		String password = "root";
@@ -301,19 +300,19 @@ public class Gestion {
 			// Etape 1 : Chargement du driver
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			// Etape 2 : Rï¿½cupï¿½ration de la connexion
+			// Etape 2 : Récupération de la connexion
 			connection = DriverManager.getConnection(url, login, password);
 			
-			// Etape 3 : Crï¿½ation d'un statement
+			// Etape 3 : Création d'un statement
 			statement = connection.createStatement();
 			
 			String sql = "Update Etudiant Set adresse= '"+nouvelleAdresse+"'where id ='"+idEtudiant+"'";
 			
-			// Etape 4 : Exï¿½cution requï¿½te
+			// Etape 4 : Exécution requête
 			resultat= statement.executeUpdate(sql);
 			
 			if(resultat==0) {
-				System.out.println("Aucun etudiant ne possÃ¨de cet id \n");
+				System.out.println("Aucun etudiant ne possède cet id \n");
 			}else {
 				System.out.println("Nouvelle adresse mise a jour \n");
 			}
@@ -330,7 +329,7 @@ public class Gestion {
 		{
 			try
 			{
-				// Etape 5 : Libï¿½rer ressources de la mï¿½moire
+				// Etape 5 : Libérer ressources de la mémoire
 				connection.close();
 				statement.close();
 			}
@@ -346,13 +345,13 @@ public class Gestion {
 	 * @param idEtudiant identifiant de l'etudiant
 	 * @param theme le theme du cours suivi
 	 * 
-	 * crÃ©e une association en l'etudiant et le cours
+	 * crée une association en l'etudiant et le cours
 	 */
 	public static void associerCoursEtudiant(int idEtudiant,String theme)
 	{
 		
 		
-		// Information d'accï¿½s ï¿½ la base de donnï¿½es
+		// Information d'accès à la base de données
 		String url = "jdbc:mysql://localhost:8889/Projet";
 		String login = "root";
 		String password = "root";
@@ -366,21 +365,21 @@ public class Gestion {
 			// Etape 1 : Chargement du driver
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			// Etape 2 : Rï¿½cupï¿½ration de la connexion
+			// Etape 2 : Récupération de la connexion
 			connection = DriverManager.getConnection(url, login, password);
 			
-			// Etape 3 : Crï¿½ation d'un statement
+			// Etape 3 : Création d'un statement
 			statement = connection.createStatement();
 			
 			String sql ="INSERT INTO CoursEtudiant " + "VALUES ('"+theme+"', "+idEtudiant+")";
 			
-			// Etape 4 : Exï¿½cution requï¿½te
+			// Etape 4 : Exécution requête
 			resultat= statement.executeUpdate(sql);
 			
 			if(resultat==0) {
-				System.out.println("Aucun etudiant ne possÃ¨de cet id \n");
+				System.out.println("Aucun etudiant ne possède cet id \n");
 			}else {
-				System.out.println("Cours associÃ© a l'etudiant \n");
+				System.out.println("Cours associé à l'etudiant \n");
 			}
 		}
 		catch (SQLException e)
@@ -395,7 +394,7 @@ public class Gestion {
 		{
 			try
 			{
-				// Etape 5 : Libï¿½rer ressources de la mï¿½moire
+				// Etape 5 : Libérer ressources de la mémoire
 				connection.close();
 				statement.close();
 			}
