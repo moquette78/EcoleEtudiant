@@ -36,7 +36,6 @@ public class Lanceur {
 		mdp=sc.nextLine();
 		
 		String role = Gestion.connexion(mail, mdp);
-		System.out.println("rolllle "+role);
 		
 		if(role.equals("directeur")) {
 			System.out.println("Bienvenue monsieur le directeur");
