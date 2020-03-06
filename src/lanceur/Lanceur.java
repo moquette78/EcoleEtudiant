@@ -3,7 +3,6 @@ package lanceur;
 import java.util.Scanner;
 
 import dao.GestionDao;
-import gestion.Gestion;
 import metier.Etudiant;
 import service.*;
 
@@ -20,7 +19,7 @@ public class Lanceur {
 		String dateNaissance="";
 		String cours="";
 		String mdp="";
-		GestionDao gestiondao =  new GestionDao();
+		Gestion gestion =  new Gestion();
 		
 		boolean connexion = false;
 		
@@ -38,7 +37,7 @@ public class Lanceur {
 		System.out.println("Tapez votre mot de passe pour vous connecter");
 		mdp=sc.nextLine();
 		
-		String role = gestiondao.connexion(mail, mdp);
+		String role = gestion.connexion(mail, mdp);
 		
 		if(role.equals("directeur")) {
 			System.out.println("Bienvenue monsieur le directeur");
@@ -90,7 +89,7 @@ public class Lanceur {
 				etudiant.setMailEtudiant(mail);
 				etudiant.setDateNaissanceEtudiant(dateNaissance);
 				etudiant.setTelephoneEtudiant(numero);
-				gestiondao.creerEtudiant(etudiant);
+				gestion.creerEtudiant(etudiant);
 				break;
 			
 			case "B":
@@ -99,13 +98,13 @@ public class Lanceur {
 				sc.nextLine();
 				System.out.println("Cours de l'etudiant ?");
 				cours = sc.nextLine();
-				gestiondao.associerCoursEtudiant(id,cours);
+				gestion.associerCoursEtudiant(id,cours);
 				break;
 			
 			case "C":
 				System.out.println("Entrer l'email  de l'etudiant ?");
 				mail = sc.nextLine();
-				gestiondao.lireEtudiant(mail);
+				gestion.lireEtudiant(mail);
 				break;
 			
 			case "D":
@@ -113,18 +112,18 @@ public class Lanceur {
 				mail = sc.nextLine();
 				System.out.println("Adresse de l'etudiant ?");
 				adresse = sc.nextLine();
-				gestiondao.modifierAdresseEtudiant(mail,adresse);
+				gestion.modifierAdresseEtudiant(mail,adresse);
 				break;
 				
 			case "E":
 				System.out.println("Entrer l'email de l'etudiant ?");
 				mail = sc.nextLine();
-				gestiondao.supprimerEtudiant(mail);
+				gestion.supprimerEtudiant(mail);
 				break;
 				
 			case "F":
 				if(role=="directeur") {
-					gestiondao.listerEtudiants();
+					gestion.listerEtudiants();
 				}else {
 					System.out.println("Vous n'avez pas les droits");
 				}
