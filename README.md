@@ -21,5 +21,5 @@ Groupe de :
 **Procédure :**
 
 1. Cloner le projet Github avec Eclipse.
-2. Dans phpmyadmin, importer la base de données grâce au fichier **base.sql**
+2. Dans phpmyadmin, créer une base de données "**base**" et importer la base de données grâce au fichier **base.sql**
 3. Compiler et exécuter le projet depuis Eclipse.
