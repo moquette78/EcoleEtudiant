@@ -94,19 +94,27 @@ public class Lanceur {
 				break;
 			
 			case "C":
-				System.out.println("Id de l'etudiant ?");
+				System.out.println("Entrer l'email  de l'etudiant ?");
 				mail = sc.nextLine();
 				sc.nextLine();
 				Gestion.lireEtudiant(mail);
 				break;
 			
 			case "D":
-				System.out.println("Id de l'etudiant ?");
+				System.out.println("Entrer l'email  de l'etudiant ?");
 				mail = sc.nextLine();
 				sc.nextLine();
 				System.out.println("Adresse de l'etudiant ?");
 				adresse = sc.nextLine();
 				Gestion.modifierAdresseEtudiant(mail,adresse);
+				break;
+				
+			case "E":
+				System.out.println("Entrer l'email de l'etudiant ?");
+				mail = sc.nextLine();
+				sc.nextLine();
+				
+				Gestion.supprimerEtudiant(mail);
 				break;
 				
 			case "F":
