@@ -95,11 +95,10 @@ public class Lanceur {
 			
 			case "B":
 				System.out.println("Entrer l'email de l'etudiant ?");
-				id = sc.nextInt();
-				sc.nextLine();
+				mail = sc.nextLine();
 				System.out.println("Cours de l'etudiant ?");
 				cours = sc.nextLine();
-				gestion.associerCoursEtudiant(id,cours);
+				gestion.associerCoursEtudiant(mail,cours);
 				break;
 			
 			case "C":

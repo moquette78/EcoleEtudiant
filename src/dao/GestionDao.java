@@ -112,12 +112,13 @@ public class GestionDao {
 					statement = connection.createStatement();
 					
 					//String sql = "INSERT INTO 'Etudiant' VALUES ("+idEtudiant+","+nomEtudiant+","+prenomEtudiant+","+mailEtudiant+","+adresseEtudiant+","+telephoneEtudiant+","+dateNaissanceEtudiant+")\"";
-					String sql ="INSERT INTO Etudiant " + "VALUES ('"+etudiant.getNom()+"','"+etudiant.getPrenom()+"','"+etudiant.getMail()+"','"+etudiant.getAdresse()+"',"+etudiant.getTelephone()+",'"+etudiant.getDateNaissanceEtudiant()+"')";
-					
+					//String sql ="INSERT INTO Etudiant(nom,prenom,mail,adresse,numero,dateNaissance) " + "VALUES ('"+etudiant.getNom()+"','"+etudiant.getPrenom()+"','"+etudiant.getMail()+"','"+etudiant.getAdresse()+"',"+etudiant.getTelephone()+",'"+etudiant.getDateNaissanceEtudiant()+"')";
+					String sql ="INSERT INTO Etudiant(nom,prenom,mail,adresse,numero,dateNaissance) " + "VALUES ('"+etudiant.getNom()+"','"+etudiant.getPrenom()+"','"+etudiant.getMail()+"','"+etudiant.getAdresse()+"','"+etudiant.getTelephone()+"','"+etudiant.getDateNaissanceEtudiant()+"')";
+
 					// Etape 4 : Ex�cution requ�te
 					statement.executeUpdate(sql);
 					
-					System.out.println("L'etudiant " + etudiant.getNom() + " " + etudiant.getPrenom() + " a �t� cr��.\n");
+					System.out.println("L'etudiant " + etudiant.getNom() + " " + etudiant.getPrenom() + " a ete cree.\n");
 				}
 				catch (SQLException e)
 				{
@@ -170,12 +171,12 @@ public class GestionDao {
 					// Etape 4 : Ex�cution requ�te
 					rs=statement.executeQuery(sql);
 					if(rs.next()) {
-					System.out.println(rs.getString("nom"));
-					System.out.println(rs.getString("prenom"));
-					System.out.println(rs.getString("mail"));
-					System.out.println(rs.getString("adresse"));
-					System.out.println(rs.getInt("numero"));
-					System.out.println(rs.getString("dateNaissance"));
+					System.out.println("Nom : "+ rs.getString("nom"));
+					System.out.println("Prenom : "+ rs.getString("prenom"));
+					System.out.println("Mail : "+ rs.getString("mail"));
+					System.out.println("Adresse : "+ rs.getString("adresse"));
+					System.out.println("Numero : "+ rs.getString("numero"));
+					System.out.println("dateNaissance : "+ rs.getString("dateNaissance"));
 					}else {
 						System.out.println("Aucun etudiant n'a cet id \n");
 					}
@@ -231,9 +232,9 @@ public class GestionDao {
 					resultat= statement.executeUpdate(sql);
 					
 					if(resultat==0) {
-						System.out.println("Aucun etudiant ne possède cet id \n");
+						System.out.println("Aucun etudiant ne possede cet id \n");
 					}else {
-						System.out.println("L'etudiant a bien été supprimé \n");
+						System.out.println("L'etudiant a bien ete supprime \n");
 					}
 				}
 				catch (SQLException e)
@@ -283,6 +284,8 @@ public class GestionDao {
 					// Etape 4 : Ex�cution requ�te
 					rs=statement.executeQuery(sql);
 					System.out.println("Voici l'ensemble des etudiants : \n");
+					System.out.println("Nom "+"Prenom \n");
+					System.out.println("----------------------");
 					while(rs.next()) {
 					System.out.println(rs.getString("nom") + " " + rs.getString("prenom"));
 					}
@@ -376,7 +379,7 @@ public class GestionDao {
 			 * 
 			 * cr�e une association en l'etudiant et le cours
 			 */
-			public static void associerCoursEtudiant(int idEtudiant,String theme)
+			public static void associerCoursEtudiant(String mailEtudiant,String theme)
 			{
 				
 				int resultat;
@@ -392,7 +395,7 @@ public class GestionDao {
 					// Etape 3 : Cr�ation d'un statement
 					statement = connection.createStatement();
 					
-					String sql ="INSERT INTO CoursEtudiant " + "VALUES ('"+theme+"', "+idEtudiant+")";
+					String sql ="INSERT INTO CoursEtudiant " + "VALUES ('"+theme+"', "+mailEtudiant+")";
 					
 					// Etape 4 : Ex�cution requ�te
 					resultat= statement.executeUpdate(sql);

@@ -35,8 +35,8 @@ public class Gestion implements Igestion {
 		GestionDao.modifierAdresseEtudiant(email, nouvelleAdresse);
 	}
 	
-	public void associerCoursEtudiant(int idEtudiant,String theme) {
-		GestionDao.associerCoursEtudiant(idEtudiant, theme);
+	public void associerCoursEtudiant(String mailEtudiant,String theme) {
+		GestionDao.associerCoursEtudiant(mailEtudiant, theme);
 	}
 	
 	public void listerEtudiants() {

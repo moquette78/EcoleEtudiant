@@ -14,7 +14,7 @@ public interface Igestion {
 	
 	abstract void modifierAdresseEtudiant(String email,String nouvelleAdresse);
 	
-	abstract void associerCoursEtudiant(int idEtudiant,String theme);
+	abstract void associerCoursEtudiant(String mailEtudiant,String theme);
 	
 	abstract void listerEtudiants();
 	
