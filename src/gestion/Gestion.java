@@ -186,7 +186,7 @@ public class Gestion {
 			System.out.println(rs.getString("mail"));
 			System.out.println(rs.getString("adresse"));
 			System.out.println(rs.getInt("numero"));
-			System.out.println(rs.getString("dateNaissance \n"));
+			System.out.println(rs.getString("dateNaissance"));
 			}else {
 				System.out.println("Aucun etudiant n'a cet id \n");
 			}
