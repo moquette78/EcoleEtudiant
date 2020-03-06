@@ -13,7 +13,7 @@ Groupe de :
 # Installation
 
 **Prérequis :**
-- Avoir **Git** et **Eclipse** installés en local
+- Avoir **Git** et **Eclipse** (JDK **version 12 ou plus**) installés en local
 - Avoir **XAMPP** installé et les services **Apache** et **MySQL** lancés (ou équivalent)
 - La base de données doit être en **local**
 - On suppose que le port de la base de données est '**8889**', le nom d'utilisateur est '**root**' et le mot de passe est 'root'.
