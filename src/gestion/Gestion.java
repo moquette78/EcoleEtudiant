@@ -21,6 +21,10 @@ public class Gestion {
 			
 			static Connection connection = null;
 			static Statement statement = null;
+			
+			
+			
+	
 	
 	/***
 	 * 
@@ -33,6 +37,9 @@ public class Gestion {
 	 * @param dateNaissanceEtudiant date de naissance de l'etudiant
 	 * @return l'etudiant créé en question
 	 */
+			
+			
+			
 	public static Etudiant creerEtudiant(int idEtudiant, String nomEtudiant, String prenomEtudiant, String mailEtudiant,
 			String adresseEtudiant, String telephoneEtudiant, String dateNaissanceEtudiant)
 	{
