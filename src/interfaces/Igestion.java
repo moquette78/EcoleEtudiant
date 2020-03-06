@@ -15,4 +15,6 @@ public interface Igestion {
 	
 	abstract void associerCoursEtudiant(int idEtudiant,String theme);
 	
+	abstract void listerEtudiants();
+	
 }
