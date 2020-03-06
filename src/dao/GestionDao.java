@@ -284,10 +284,10 @@ public class GestionDao {
 					// Etape 4 : Ex�cution requ�te
 					rs=statement.executeQuery(sql);
 					System.out.println("Voici l'ensemble des etudiants : \n");
-					System.out.println("Nom "+"Prenom \n");
+					System.out.println("Nom "+"Prenom"+" mail \n");
 					System.out.println("----------------------");
 					while(rs.next()) {
-					System.out.println(rs.getString("nom") + " " + rs.getString("prenom"));
+					System.out.println(rs.getString("nom") + " " + rs.getString("prenom")+ " " + rs.getString("mail"));
 					}
 					System.out.println("\n");
 				}
@@ -395,7 +395,7 @@ public class GestionDao {
 					// Etape 3 : Cr�ation d'un statement
 					statement = connection.createStatement();
 					
-					String sql ="INSERT INTO CoursEtudiant " + "VALUES ('"+theme+"', "+mailEtudiant+")";
+					String sql ="INSERT INTO CoursEtudiant " + "VALUES ('"+theme+"', '"+mailEtudiant+"')";
 					
 					// Etape 4 : Ex�cution requ�te
 					resultat= statement.executeUpdate(sql);
@@ -403,7 +403,7 @@ public class GestionDao {
 					if(resultat==0) {
 						System.out.println("Aucun etudiant ne poss�de cet id \n");
 					}else {
-						System.out.println("Cours associ� � l'etudiant \n");
+						System.out.println("Cours associe a l'etudiant \n");
 					}
 				}
 				catch (SQLException e)
